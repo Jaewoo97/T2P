@@ -4,10 +4,10 @@ Official repository of: Multi-agent Long-term 3D Human Pose Forecasting via Inte
 
 ## Table of Contents
 - [Updates](#Updates)
-- [Dataset preparation (JRDB)](#Dataset preparation (JRDB))
+- [Dataset preparation (JRDB)](#Dataset)
 - [Acknowledgements](#Acknowledgements)
 
-## Dataset preparation (JRDB)
+## Dataset
 We upload an updated version of the JRDB dataset parser (3D joints => SMPL parameters for pose). 
 
 1. Set conda environment based on [BEV](https://github.com/Arthur151/ROMP). Also install torch-geometric. (Tested version: Python 3.11.9, cuda 12.1, torch 2.3.0, torch-geometric 2.5.3)
