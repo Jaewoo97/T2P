@@ -4,8 +4,25 @@ Official repository of: Multi-agent Long-term 3D Human Pose Forecasting via Inte
 
 ## Table of Contents
 - [Updates](#Updates)
+- [Dataset preparation (JRDB)](#Dataset preparation (JRDB))
+- [Acknowledgements](#Acknowledgements)
+
+## Dataset preparation (JRDB)
+We upload an updated version of the JRDB dataset parser (3D joints => SMPL parameters for pose). 
+
+1. Download the original dataset from [JRDB](https://jrdb.erc.monash.edu/). Change the default_save_dir in preprocess_1st_jrdb.py accordingly.
+2. Download the preprocessed robot odometry files (.npy) from releases. Change the directory of odometry_base in preprocess_1st_jrdb.py accordingly. Thanks to [human-scene-transformer](https://github.com/google-research/human-scene-transformer) for sharing your work.
+3. Process the 1st and 2nd in order (preprocess_1st_jrdb.py, preprocess_2nd_jrdb.py).
+
+preprocess_1st_jrdb.py: Processes the trajectory information from 3D bounding boxes, and 3D pose is extracted by [BEV](https://github.com/Arthur151/ROMP). Theta parameters of SMPL (24X3) is used as pose information. Each frame is preprocessed independently.
+preprocess_2nd_jrdb.py: Parses each scene into .pt file. The data is saved as TemporalData class, a format used by [HiVT](https://github.com/ZikangZhou/HiVT). The parameters are set to parse the data in 2.5FPS.
 
 ## Updates
 
+### [2024-10-17]
+-**JRDB Dataset parser uploaded**: Codes to model to come shortly!
 ### [2024-06-16]
 -**Project page created**: [Project page](https://jaewoo97.github.io/t2p_/) up and running. Codes & dataset to come shortly!
+
+## Acknowledgements
+- Thanks to [human-scene-transformer](https://github.com/google-research/human-scene-transformer), [JRDB](https://jrdb.erc.monash.edu/), [BEV](https://github.com/Arthur151/ROMP), [HiVT](https://github.com/ZikangZhou/HiVT) for sharing your work.
