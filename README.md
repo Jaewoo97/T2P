@@ -22,7 +22,7 @@ python preprocess_2nd_jrdb.py
 1. Preprocessing JRDB
 JRDB: Adjust the directories to preprocessed files in `dataset/t2p_dataset.py` accordingly after preprocessing the desired dataset from above.
 
-2. Preprocessing CMU-Mocap / 3DPW: These datasets require a separate preprocessing step. Run `dataset/3dpw_hivt.py`, `dataset/Mocap_UMPM_hivt.py` with process_dir adjusted to your environment. 3DPW and CMU_mocap raw data are located in `./data` directory.
+2. Preprocessing CMU-Mocap / 3DPW: These datasets require a separate preprocessing step. Download raw dataset files from release and run `dataset/3dpw_hivt.py`, `dataset/Mocap_UMPM_hivt.py` with process_dir adjusted to your environment.
 ```
 python dataset/3dpw_hivt.py
 python dataset/Mocap_UMPM_hivt.py
