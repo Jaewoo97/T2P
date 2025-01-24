@@ -14,12 +14,25 @@ We upload an updated version of the JRDB dataset parser (3D joints => SMPL param
 2. Download the original dataset from [JRDB](https://jrdb.erc.monash.edu/). Change the default_save_dir in preprocess_1st_jrdb.py accordingly.
 3. Download the preprocessed robot odometry files (.npy) from releases. Change the directory of odometry_base in preprocess_1st_jrdb.py accordingly. Thanks to [human-scene-transformer](https://github.com/google-research/human-scene-transformer) for sharing your work.
 4. Process the 1st and 2nd in order (preprocess_1st_jrdb.py, preprocess_2nd_jrdb.py).
-
+```
+python preprocess_1st_jrdb.py
+```
 preprocess_1st_jrdb.py: Processes the trajectory information from 3D bounding boxes, and 3D pose is extracted by [BEV](https://github.com/Arthur151/ROMP). Theta parameters of SMPL (24X3) is used as pose information. Each frame is preprocessed independently.
+```
+python preprocess_2nd_jrdb.py
+```
 preprocess_2nd_jrdb.py: Parses each scene into .pt file. The data is saved as TemporalData class, a format used by [HiVT](https://github.com/ZikangZhou/HiVT). The parameters are set to parse the data in 2.5FPS.
 
 ## Training
-Adjust the directories to preprocessed files in dataset/t2p_dataset.py accordingly after preprocessing the desired dataset from above. Then run lightning_train.py.
+1. Preprocessing
+JRDB: Adjust the directories to preprocessed files in dataset/t2p_dataset.py accordingly after preprocessing the desired dataset from above.
+CMU-Mocap / 3DPW: Run dataset/3dpw_hivt.py, dataset/Mocap_UMPM_hivt.py with process_dir adjusted to your environment. 3DPW and CMU_mocap raw data are located in ./data directory.
+```
+python dataset/3dpw_hivt.py
+python dataset/Mocap_UMPM_hivt.py
+```
+3. Training
+Run lightning_train.py.
 
 ## Acknowledgements
 - Thanks to [human-scene-transformer](https://github.com/google-research/human-scene-transformer), [JRDB](https://jrdb.erc.monash.edu/), [BEV](https://github.com/Arthur151/ROMP), [HiVT](https://github.com/ZikangZhou/HiVT) for sharing your work.
