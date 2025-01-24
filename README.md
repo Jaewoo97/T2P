@@ -18,12 +18,8 @@ We upload an updated version of the JRDB dataset parser (3D joints => SMPL param
 preprocess_1st_jrdb.py: Processes the trajectory information from 3D bounding boxes, and 3D pose is extracted by [BEV](https://github.com/Arthur151/ROMP). Theta parameters of SMPL (24X3) is used as pose information. Each frame is preprocessed independently.
 preprocess_2nd_jrdb.py: Parses each scene into .pt file. The data is saved as TemporalData class, a format used by [HiVT](https://github.com/ZikangZhou/HiVT). The parameters are set to parse the data in 2.5FPS.
 
-## Updates
-
-### [2024-10-17]
--**JRDB Dataset parser uploaded**: Codes to model to come shortly!
-### [2024-06-16]
--**Project page created**: [Project page](https://jaewoo97.github.io/t2p_/) up and running. Codes & dataset to come shortly!
+## Training
+Adjust the directories to preprocessed files in dataset/t2p_dataset.py accordingly after preprocessing the desired dataset from above. Then run lightning_train.py.
 
 ## Acknowledgements
 - Thanks to [human-scene-transformer](https://github.com/google-research/human-scene-transformer), [JRDB](https://jrdb.erc.monash.edu/), [BEV](https://github.com/Arthur151/ROMP), [HiVT](https://github.com/ZikangZhou/HiVT) for sharing your work.
