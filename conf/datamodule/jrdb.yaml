@@ -1,0 +1,18 @@
+_target_: dataset.jrdb_datamodule.jrdb_DataModule
+
+train_args:
+  - dataset: ${dataset}
+  - input_time: ${input_time}
+  - bs: ${batch_size}
+val_args:
+  - dataset: ${dataset}
+  - input_time: ${input_time}
+  - bs: ${batch_size}
+test_args:
+  - dataset: ${dataset}
+  - input_time: ${input_time}
+  - bs: ${batch_size}
+shuffle: True
+# augmentations: null
+num_workers: ${num_workers}
+pin_memory: True

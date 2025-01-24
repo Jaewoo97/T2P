@@ -1,0 +1,12 @@
+{
+    "exclude": [
+        "Checkpoints",
+        "tmp*",
+        ".vscode",
+        "data",
+        "HiVT/checkpoints",
+        "preprocessed",
+        "viz",
+        "*.npy"
+    ],
+}
