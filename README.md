@@ -2,7 +2,7 @@
 Official repository of: Multi-agent Long-term 3D Human Pose Forecasting via Interaction-aware Trajectory Conditioning (CVPR 2024 Highlight)
 [[paper](https://openaccess.thecvf.com/content/CVPR2024/html/Jeong_Multi-agent_Long-term_3D_Human_Pose_Forecasting_via_Interaction-aware_Trajectory_Conditioning_CVPR_2024_paper.html)] [[project page](https://jaewoo97.github.io/t2p_/)]
 
-## Dataset
+## JRDB-GMP Dataset
 We upload an updated version of the JRDB dataset parser (3D joints => SMPL parameters for pose). 
 
 1. Set conda environment based on [BEV](https://github.com/Arthur151/ROMP). Also install torch-geometric. (Tested version: Python 3.11.9, cuda 12.1, torch 2.3.0, torch-geometric 2.5.3)
@@ -21,12 +21,13 @@ python preprocess_2nd_jrdb.py
 ## Training
 1. Preprocessing
 JRDB: Adjust the directories to preprocessed files in `dataset/t2p_dataset.py` accordingly after preprocessing the desired dataset from above.
-CMU-Mocap / 3DPW: Run `dataset/3dpw_hivt.py`, `dataset/Mocap_UMPM_hivt.py` with process_dir adjusted to your environment. 3DPW and CMU_mocap raw data are located in `./data` directory.
+
+CMU-Mocap / 3DPW: These datasets require a separate preprocessing step. Run `dataset/3dpw_hivt.py`, `dataset/Mocap_UMPM_hivt.py` with process_dir adjusted to your environment. 3DPW and CMU_mocap raw data are located in `./data` directory.
 ```
 python dataset/3dpw_hivt.py
 python dataset/Mocap_UMPM_hivt.py
 ```
-3. Training
+2. Training
 Run `lightning_train.py`.
 
 ## Acknowledgements
