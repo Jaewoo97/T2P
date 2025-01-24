@@ -19,10 +19,10 @@ python preprocess_2nd_jrdb.py
 `preprocess_2nd_jrdb.py`: Parses each scene into .pt file. The data is saved as TemporalData class, a format used by [HiVT](https://github.com/ZikangZhou/HiVT). The parameters are set to parse the data in 2.5FPS.
 
 ## Training
-1. Preprocessing
+1a. Preprocessing JRDB
 JRDB: Adjust the directories to preprocessed files in `dataset/t2p_dataset.py` accordingly after preprocessing the desired dataset from above.
 
-CMU-Mocap / 3DPW: These datasets require a separate preprocessing step. Run `dataset/3dpw_hivt.py`, `dataset/Mocap_UMPM_hivt.py` with process_dir adjusted to your environment. 3DPW and CMU_mocap raw data are located in `./data` directory.
+1b. Preprocessing CMU-Mocap / 3DPW: These datasets require a separate preprocessing step. Run `dataset/3dpw_hivt.py`, `dataset/Mocap_UMPM_hivt.py` with process_dir adjusted to your environment. 3DPW and CMU_mocap raw data are located in `./data` directory.
 ```
 python dataset/3dpw_hivt.py
 python dataset/Mocap_UMPM_hivt.py
