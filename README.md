@@ -2,11 +2,6 @@
 Official repository of: Multi-agent Long-term 3D Human Pose Forecasting via Interaction-aware Trajectory Conditioning (CVPR 2024 Highlight)
 [[paper](https://openaccess.thecvf.com/content/CVPR2024/html/Jeong_Multi-agent_Long-term_3D_Human_Pose_Forecasting_via_Interaction-aware_Trajectory_Conditioning_CVPR_2024_paper.html)] [[project page](https://jaewoo97.github.io/t2p_/)]
 
-## Table of Contents
-- [Updates](#Updates)
-- [Dataset preparation (JRDB)](#Dataset)
-- [Acknowledgements](#Acknowledgements)
-
 ## Dataset
 We upload an updated version of the JRDB dataset parser (3D joints => SMPL parameters for pose). 
 
