@@ -1,7 +1,7 @@
 defaults:
   - hydra: default
   - datamodule: jrdb
-  - model: prediction_model
+  - model: prediction_model_v2
   - net: t2p_jrdb
 output: '1103_3dpw_t2p_v3_2_dec_onlyMotion'
 
