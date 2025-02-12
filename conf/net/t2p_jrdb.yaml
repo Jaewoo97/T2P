@@ -1,5 +1,5 @@
 target:
-  _target_: models.lightningModel_T2P.TBIFormer
+  _target_: models.lightningModel_T2P.T2P
   input_dim: 128
   d_model: 128
   d_inner: 1024
