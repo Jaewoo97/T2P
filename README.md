@@ -28,7 +28,7 @@ python dataset/3dpw_hivt.py
 python dataset/Mocap_UMPM_hivt.py
 ```
 3. Training
-Run `lightning_train.py`.
+Setup environment by running `install_dependencies.sh` with python 3.8 and cuda 12.1. Run `lightning_train.py`.
 
 ## Acknowledgements
 - Thanks to [human-scene-transformer](https://github.com/google-research/human-scene-transformer), [JRDB](https://jrdb.erc.monash.edu/), [BEV](https://github.com/Arthur151/ROMP), [HiVT](https://github.com/ZikangZhou/HiVT) for sharing your work.
