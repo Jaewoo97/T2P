@@ -8,7 +8,7 @@ import torch.nn.functional as F
 from torchmetrics import MetricCollection
 
 # from metrics import APE_Mean, APE_T
-from metrics.t2p_metrics_v2 import APE, JPE, FDE, APE_overall, JPE_overall
+from metrics.t2p_metrics import APE, JPE, FDE, APE_overall, JPE_overall
 from hydra.utils import instantiate
 from utils_.viz import *
 
