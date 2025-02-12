@@ -1,0 +1,51 @@
+defaults:
+  - hydra: default
+  - datamodule: cmu_umpm
+  - model: prediction_model
+  - net: t2p_jrdb
+output: 'cmu_t2p'
+dataset: 'cmu_umpm'
+is_baseline: False
+desc: debug
+seed: 3340
+monitor: val/JPE_overall_2000ms
+save_top_k: 3
+viz_traj: False
+viz_joint: False
+viz_joint_jansang: False
+kernel_size: 5
+sampling_method: 'ade'
+local_radius: 0.1
+
+input_time: 25
+output_time: 50
+num_modes: 6
+num_joints: 15
+
+data_root:
+checkpoint:
+pretrained_weights: 
+
+# trainer
+# num_workers: 32
+num_workers: 0
+gpus: 1
+sync_bn: true
+batch_size: 64
+epochs: 60
+warmup_epochs: 10
+
+
+# optimizer
+lr: 0.0003
+weight_decay: 2
+gradient_clip_val: 5
+gradient_clip_algorithm: norm
+
+limit_train_batches:
+limit_val_batches:
+limit_test_batches:
+log_model: all
+test: false
+
+wandb: disable

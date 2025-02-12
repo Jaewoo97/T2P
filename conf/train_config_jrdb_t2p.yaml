@@ -1,0 +1,53 @@
+defaults:
+  - hydra: default
+  - datamodule: jrdb
+  - model: prediction_model
+  - net: t2p_jrdb
+output: ''
+
+is_baseline: False
+desc: debug
+seed: 1234
+monitor: val/JPE_overall_5000ms
+save_top_k: 3
+viz_traj: False
+viz_joint: False
+viz_joint_jansang: False
+kernel_size: 16
+sampling_method: 'ade'
+local_radius: 4
+
+input_time: 30
+output_time: 75
+num_modes: 6
+# dataset: 'jrdb_2_5_25'
+dataset: 'jrdb_2_5_25'
+num_joints: 15
+
+data_root:
+checkpoint:
+pretrained_weights: 
+
+# trainer
+# num_workers: 32
+num_workers: 0
+gpus: 1
+sync_bn: true
+batch_size: 64
+epochs: 60
+warmup_epochs: 10
+
+
+# optimizer
+lr: 0.0003
+weight_decay: 2
+gradient_clip_val: 5
+gradient_clip_algorithm: norm
+
+limit_train_batches: 1.0
+limit_val_batches: 1.0
+limit_test_batches:
+log_model: all
+test: false
+
+wandb: disable

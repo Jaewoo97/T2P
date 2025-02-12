@@ -1,0 +1,16 @@
+name: t2p_v2
+
+target:
+  _target_: models.lightningModule_predictionmodel.PredictionModel
+  lr: ${lr}
+  weight_decay: ${weight_decay}
+  epochs: ${epochs}
+  warmup_epochs: ${warmup_epochs}
+  output_time: ${output_time}
+  dataset: ${dataset}
+  batch_size: ${batch_size}
+  is_baseline: ${is_baseline}
+  num_joints: ${num_joints}
+  viz_traj: ${viz_traj}
+  viz_joint: ${viz_joint}
+  viz_joint_jansang: ${viz_joint_jansang}
