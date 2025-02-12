@@ -169,7 +169,7 @@ def body_partition(mydata, index):   # Body Partition
     return out
 
 
-class TBIFormer(nn.Module):
+class T2P(nn.Module):
 
     def __init__(
             self, input_dim=128, d_model=512, d_inner=1024,
